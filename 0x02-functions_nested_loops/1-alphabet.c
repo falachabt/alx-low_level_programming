@@ -2,6 +2,6 @@
 
 int main(void)
 {
-  print_alphabet();
+  puts(print_alphabet());
   return(0);
 }
