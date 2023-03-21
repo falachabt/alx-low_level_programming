@@ -16,7 +16,7 @@ void print_alphabet_x10(void)
 	  if(j==26)
 	    {
 	      _putchar('\n');
-	      continue:
+	      continue;
 	    }
 	  
 	  _putchar(alphabet[j]);
