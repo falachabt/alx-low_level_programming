@@ -5,11 +5,24 @@
  */
 void print_alphabet_x10(void)
 {
+  har alphabet[26] = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 
+                          'h','i','j','k','l','m','n','o',
+                          'p','q','r','s','t','u','v',
+                          'w','x','y','z'};
   int i;
-
+  int j;
+  
   for(i = 0; i<10; i++)
     {
-      print_alphabet();
-      _putchar('\n');
+      for(j=0; j<=26; j++)
+	{
+	  if(j==26)
+	    {
+	      _putchar('\n');
+	      continue:
+	    }
+	  
+	  _putchar(alphabet[j]);
+	}
     }
 }
