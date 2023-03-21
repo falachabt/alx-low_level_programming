@@ -1,18 +1,14 @@
 #include "main.h"
-#include <ctype.h>
 
 /**
- *This function will take in paremter one caracter 
+ * _islower - checks if a character is lowercase
+ * @c: character to check
  *
- *this will return 1 if the char islower
- *
- *other whise it will return 0
- *
- *to do this it use the function the ascii comparaison
+ * Return: 1 if c is lowercase, 0 otherwise
  */
 int _islower(int c)
 {
-  int result = (c >= 'a' && c <= 'z')? 1 : 0;
+  int result = (c >= 'a' && c <= 'z') ? 1 : 0;
 
-  return result;
+  return (result);
 }
