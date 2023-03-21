@@ -1,9 +1,8 @@
 #include "main.h"
 
 /**
- *this function return all letters of alphabet in the lower case
+ *pirt_alaphabet -prints the alphabet in lowercase followed by a new line
  *
- */
 
 void print_alphabet(void)
 {
