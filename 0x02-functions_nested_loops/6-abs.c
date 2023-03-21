@@ -7,11 +7,10 @@
  * Return: the return value is the absolute value of the interger pass in parameter
  */
 int _abs(int n)
-
-int result;
+{
 if (n<0)
 {
-n=-n
+n=-n;
 }
 
 return (n);
