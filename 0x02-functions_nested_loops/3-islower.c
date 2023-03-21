@@ -8,11 +8,11 @@
  *
  *other whise it will return 0
  *
- *to do this it use the function 
+ *to do this it use the function the ascii comparaison
  */
 int _islower(int c)
 {
-  int result = (isLower(c))? 1 : 0;
+  int result = (c >= 'a' && c <= 'z')? 1 : 0;
 
   return result;
 }
