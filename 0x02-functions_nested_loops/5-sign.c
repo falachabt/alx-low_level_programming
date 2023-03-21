@@ -2,7 +2,7 @@
 
 /**
  * print_sign - print the sign of a givent number
- * @n: number to check the sign 
+ * @n: number to check the sign
  *
  *Return: 1 if positif, 0 if zeo, and -1 of negatif
  */
@@ -13,7 +13,7 @@ if (n > 0)
 _putchar('+');
 return (1);
 }
-else if(n == 0)
+else if (n == 0)
 {
 _putchar('0');
 return (0);
