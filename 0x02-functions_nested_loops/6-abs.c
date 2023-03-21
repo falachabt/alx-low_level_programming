@@ -9,8 +9,11 @@
 int _abs(int n)
 
 int result;
-result = (n<0) ? -n :  n;  
+if (n<0)
+{
+n=-n
+}
 
-return (result);
+return (n);
 }
     
