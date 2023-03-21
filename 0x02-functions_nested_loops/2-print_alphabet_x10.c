@@ -1,7 +1,14 @@
 #include "main.h"
 
-/** this function will print x10 time the alphabet in a new line
- *the exepected return is 0
+/**
+ * print_alphabet_x10 - prints the alphabet in lowercase 10 times
+ *
+ * This function uses two nested loops to print the alphabet in lowercase
+ * 10 times. The outer loop iterates 10 times and the inner loop iterates
+ * over an array of characters that contains all the letters of the alphabet.
+ * In each iteration of the inner loop, it prints one letter using the _putchar
+ * function. After each iteration of the outer loop, it prints a new line character
+ * using _putchar('\n').
  */
 void print_alphabet_x10(void)
 {
