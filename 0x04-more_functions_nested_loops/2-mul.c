@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *mul: - multiply to number and return the result
+ * mul  - multiply to number and return the result
  *@a: the first number to multiply
  *@b: the second number to multiply
  *
@@ -10,5 +10,5 @@
 int mul(int a, int b)
 {
 
-return (a*b);
+return (a * b);
 }
