@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 /**
- *fizzbuzz -  print some special things
+ *main -  print some special things
  *
  *Return: nothing to return
  */
@@ -33,7 +33,7 @@ int  main(void)
 			printf(" ");
 		}
 	}
-	printf("\n ");
+	_putchar('\n');
 
 	return (0);
 }
