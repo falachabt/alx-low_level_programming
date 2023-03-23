@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- *print_diagol -  draw a diagonal using symbols
+ *print_diagonal -  draw a diagonal using symbols
  *@n: the lenght of the diagonal
  *
  *Return: nothing to return
