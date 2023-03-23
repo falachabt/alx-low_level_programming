@@ -35,4 +35,6 @@ void print_square(int size);
 /* fizzbus */
 void fizz_buzz(void);
 
+void print_triangle(int size);
+
 #endif /*  MIAN_H */
