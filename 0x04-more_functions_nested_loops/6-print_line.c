@@ -1,24 +1,20 @@
 #include "main.h"
 
 /**
- *print_line: print a straitht line with _ n times
+ *print_line -  print a straitht line with _ n times
  *@n: the number of times the character _ should be repeated
  *
  */
 void print_line(int n)
 {
+	if (n > 0)
+	{
+	int i;
 
-if(n > 0)
-{
-int i ;
-for (i = 0; i < n; i++)
-{
-  
-_putchar('_');
+	for (i = 0; i < n; i++)
+	{
+		_putchar('_');
+	}
+	}
+	_putchar('\n');
 }
-}
- 
- _putchar('\n');
-}
-
- 
