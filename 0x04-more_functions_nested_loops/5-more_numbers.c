@@ -1,10 +1,11 @@
 #include "main.h"
 
-/** print_numbers: return number for 0 to 9
+/**
+ *print_numbers: return number for 0 to 9
  *
  *Return: no return for this function 
  */
-void print_numbers(void)
+void more_numbers(void)
 {
 int i;
 int j;
