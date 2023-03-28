@@ -4,7 +4,7 @@
  * puts2 - print every oddd number
  * @str: the string from which we are going to print
  *
- * Return: nothing to return
+ * Return: nothing to return here
  */
 
 void puts2(char *str)
