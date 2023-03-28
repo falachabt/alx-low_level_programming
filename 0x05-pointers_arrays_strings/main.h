@@ -1,4 +1,8 @@
-#ifndef MAIN
-#define MAIN
+#ifndef MAIN_H
+#define MAIN_H
 
-voitd reset_to_98(int *n);
+void reset_to_98(int *n);
+
+
+#endif /* MAIN_H */
+
