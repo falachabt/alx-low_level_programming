@@ -11,6 +11,7 @@ void puts_half(char *str)
 {
 	int len = 0;
 	int limit;
+	int i;
 
 	while (str[len] != '\0')
 	{
@@ -18,9 +19,9 @@ void puts_half(char *str)
 	}
 
 	limit = ((len % 2 == 0) ? len / 2 : (len + 1) / 2) - 1;
-	for (limit; limit < len; limit++)
+	for (i = limit; i < len; i++)
 	{
-		_putchar(str[limit]);
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }
