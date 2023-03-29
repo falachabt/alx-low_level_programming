@@ -12,19 +12,29 @@
 char *_strncat(char *dest, char *src, int n)
 {
 	int i, j;
+	char temp;
 
 	i = 0;
 	j = 0;
-	while (dest[i] != '\0')
+	while (src[i] != '\0' && i < n)
+		temp[i] = src[i]
 		i++;
 
-	while (j < n && src[j] != '\0')
+	while (dest[j] != '\0')
 	{
-		dest[i + j] = src[j];
+		temp[i + j] = dest[j];
 		j++;
 	}
 
-	dest[i+j] = '\0';
+	temp[i+j] = '\0';
+	i = j - 1;
+	j = 0;
+
+	while (j < i)
+	{
+		dest[j] = temp[j];
+		j++;
+	}
 
 	return (dest);
 }
