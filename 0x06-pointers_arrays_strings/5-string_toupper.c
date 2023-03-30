@@ -8,7 +8,7 @@
  *
  * Description: This function takes in one argument: a string `s`. It iterates
  * through the string and checks if each character is a lowercase letter. If it
- * is, the function changes it to its uppercase equivalent. The function returns
+ *  the funuivalent. The function returns
  * a pointer to the modified string.
  */
 char *string_toupper(char *s)
