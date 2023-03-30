@@ -1,41 +1,34 @@
 #include "main.h"
 
 /**
- * print_number - prints an integer
- * @n: integer to print
- *
- * Return: void
+ * print_number - Prints an integer.
+ * @n: The integer to print.
  */
 void print_number(int n)
 {
-    int digits = 1, divisor = 1, i, digit_value, last_digit;
+    int power, num;
+
+    power = 1;
 
     if (n < 0)
     {
         _putchar('-');
-        n = -n;
+        n *= -1;
     }
 
-    /* Determine the number of digits in the integer */
-    while ((n / divisor) >= 10)
+    num = n;
+
+    while (num / 10 != 0)
     {
-        digits++;
-        divisor *= 10;
+        power *= 10;
+        num /= 10;
     }
 
-    for (i = 0; i < digits; i++)
+    while (power != 0)
     {
-        divisor /= 10;
-        digit_value = n / divisor;
-        last_digit = n % 10;
-        n %= divisor;
-        if (digit_value < 0)
-            digit_value = -digit_value;
-        _putchar(digit_value + '0');
+        _putchar((n / power) + '0');
+        n %= power;
+        power /= 10;
     }
-
-    if (last_digit < 0)
-        last_digit = -last_digit;
-    _putchar(last_digit + '0');
 }
 
