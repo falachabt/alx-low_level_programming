@@ -2,22 +2,40 @@
 
 /**
  * print_number - prints an integer
- * @n: the integer to print
+ * @n: integer to print
  *
  * Return: void
  */
 void print_number(int n)
 {
-	unsigned int num = n;
+    int digits = 1, divisor = 1, i, digit_value, last_digit;
 
-	if (n < 0)
-	{
-		_putchar('-');
-		num = -n;
-	}
+    if (n < 0)
+    {
+        _putchar('-');
+        n = -n;
+    }
 
-	if (num / 10)
-		print_number(num / 10);
+    /* Determine the number of digits in the integer */
+    while ((n / divisor) >= 10)
+    {
+        digits++;
+        divisor *= 10;
+    }
 
-	_putchar((num % 10) + '0');
+    for (i = 0; i < digits; i++)
+    {
+        divisor /= 10;
+        digit_value = n / divisor;
+        last_digit = n % 10;
+        n %= divisor;
+        if (digit_value < 0)
+            digit_value = -digit_value;
+        _putchar(digit_value + '0');
+    }
+
+    if (last_digit < 0)
+        last_digit = -last_digit;
+    _putchar(last_digit + '0');
 }
+
