@@ -9,7 +9,7 @@
  * Return: a pointer to the first occurence of c int
  */
 
-char *_strchr(char *s; char c)
+char *_strchr(char *s, char c)
 {
 
 	while (*s != '\0')
@@ -19,8 +19,6 @@ char *_strchr(char *s; char c)
 		s++;
 	}
 
-	if(c == '\0')
-		return (s);
 
 	return (NULL);
 }
