@@ -13,15 +13,15 @@ int is_prime_number(int n)
 	if (n < 2)
 		return (0);
 
-	return (find_prime(n,n - 1));
+	return (find_prime(n, n - 1));
 }
 
 /**
- * find_prime - check the rest 
+ * find_prime - check the rest
  * @n: the dividante
  * @i: the divider
  *
- * Return: 0 is 
+ * Return: 0 is
  */
 int find_prime(int n, int i)
 {
