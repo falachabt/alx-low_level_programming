@@ -3,8 +3,11 @@
 
 int  main(int argc, char *argv[])
 {
-	while(argc--)
+	int i = 0;
+	while(i < argc)
+	{
 		printf("%s",argv[argc]);
-
+		i++;
+	}
 	return (0);
 }
