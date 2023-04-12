@@ -1,9 +1,7 @@
-#include "main.h"
+#include <stdio.h>
 
-int  main(int argc, char *argv[])
+int  main(int argc,__attribute__((unused))  char *argv[])
 {
-	(void)argv;
-	_putchar(argc - 1);
-
+	printf("%d\n",argc - 1);
 	return (0);
 }
