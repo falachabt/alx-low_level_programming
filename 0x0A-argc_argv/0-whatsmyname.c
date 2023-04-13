@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int  main(int argc, char *argv[])
+/**
+ * main - print the name of the programm
+ * @argc: the lenght of the array argv
+ * @argv: the arrray os attributes
+ *
+ * Return: 0
+ */
+int  main(int __attribute__((unused)) argc, char *argv[])
 {
-	(void) argc;
-	int i = 0;
-	char name = *argv[0];
-
-	while(name[i] != '\0')
-	{
-		_putchar(name[i]);
-	}
+	printf("%s\n", argv[0]);
 	return (0);
 }
