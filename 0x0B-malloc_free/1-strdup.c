@@ -1,29 +1,29 @@
 #include "main.h"
 #include <stdlib.h>
-
 /**
- * create_array - creates an array of chars, and initializes it with a specific char
- * @size: size of array
- * @c: character to initialize array with
+ * _strdup - create a pointer to a newlly allocated memory.
+ * @str: string.
  *
- * Return: pointer to the array, or NULL if it fails
+ * Return: pointer of a
  */
-char *create_array(unsigned int size, char c)
+char *_strdup(char *str)
 {
-	char *arr;
-	unsigned int i;
+	char *andstr;
+	unsigned int i, j;
 
-	if (size == 0)
+	if (str == NULL)
 		return (NULL);
 
-	arr = malloc(sizeof(char) * size);
+	for (i = 0; str[i] != '\0'; i++)
+		;
 
-	if (arr == NULL)
+	andstr = (char *)malloc(sizeof(char) * (i + 1));
+
+	if (andstr == NULL)
 		return (NULL);
 
-	for (i = 0; i < size; i++)
-		arr[i] = c;
+	for (j = 0; j <= i; j++)
+		andstr[j] = str[j];
 
-	return (arr);
+	return (andstr);
 }
-
