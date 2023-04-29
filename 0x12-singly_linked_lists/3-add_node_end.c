@@ -1,5 +1,8 @@
 #include "lists.h"
 
+
+int _strlend(char *str);
+
 /**
  * add_node_end - Adds a new node at the end of a list_t list
  * @head: Pointer to a pointer to the first element of the list
