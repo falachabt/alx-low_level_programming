@@ -1,37 +1,25 @@
+#include <stdio.h>
 #include "function_pointers.h"
 
+
 /**
- * int_index - the function  will find  an integere
- *
- * @array: the array in which we wil find the integer
- * @size: the size of the array 
- * @cmp: the function use to find the integer
- *
- * Return: the index of the find element
+ * int_index - searches for an iarray using a function pointer
+ * @array: array to search in
+ * @size: size of the array
+ * @cmp: functiontion takes an int argument and returns int
+ * Return: index
  */
 int int_index(int *array, int size, int (*cmp)(int))
 {
-	int i = 0;
-	bool find = false;
+	int i;
 
-	if (size <= 0 || !array || !cmp)
-		return (-1);
-
-	while (i < size)
+	if (array && cmp && size > 0)
 	{
-		if (cmp(array[i]))
+		for (i = 0; i < size; i++)
 		{
-			find = true;
-			return (i);
+			if (cmp(array[i]))
+				return (i);
 		}
 	}
-
-	if (!find)
-		return (-1);
+	return (-1);
 }
-
-		
-
-
-
-
