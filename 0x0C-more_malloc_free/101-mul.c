@@ -1,14 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int is_valid_number(char *str)
-{
-    for (int i = 0; str[i]; i++) {
-        if (str[i] < '0' || str[i] > '9')
+int is_valid_number(char *str) {
+    int i;
+    for (i = 0; str[i]; i++) {
+        if (str[i] < '0' || str[i] > '9') {
             return 0;
+        }
     }
     return 1;
 }
+
 
 void multiply(char *num1, char *num2)
 {
