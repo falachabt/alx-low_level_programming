@@ -3,7 +3,7 @@
 /**
   *argstostr - of the program.
   *@ac: numeber of arguement
-  *@av: pointer to array of 
+  *@av: pointer to array of
   *Return: NULer to new string.
   *NULL on fail.
   */
