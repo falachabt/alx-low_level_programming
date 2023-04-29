@@ -1,16 +1,16 @@
 #include "lists.h"
 
 /**
- * add_node_end - Adds a new node at the end of a list_t list.
- * @head: Pointer to the pointer of the head node of a list_t list.
- * @str: String to be added to the new node.
+ * add_node_end - Adds a new node at the end of a list_t list
+ * @head: A pointer to the head node of the list_t list
+ * @str: The string to be added to the new node
  *
- * Return: The address of the new element, or NULL if it failed.
+ * Return: The address of the new element, or NULL if it failed
  */
 list_t *add_node_end(list_t **head, const char *str)
 {
-    list_t *new_node, *current_node;
-    unsigned int length;
+    list_t *new_node, *last_node;
+    unsigned int len = 0;
 
     new_node = malloc(sizeof(list_t));
     if (new_node == NULL)
@@ -23,38 +23,25 @@ list_t *add_node_end(list_t **head, const char *str)
         return (NULL);
     }
 
-    length = _strlen(new_node->str);
-    new_node->len = length;
+    while (str[len] != '\0')
+        len++;
+
+    new_node->len = len;
     new_node->next = NULL;
 
     if (*head == NULL)
     {
         *head = new_node;
-        return (new_node);
     }
+    else
+    {
+        last_node = *head;
+        while (last_node->next != NULL)
+            last_node = last_node->next;
 
-    current_node = *head;
-    while (current_node->next != NULL)
-        current_node = current_node->next;
-
-    current_node->next = new_node;
+        last_node->next = new_node;
+    }
 
     return (new_node);
 }
-
-/**
- * _strlen - Returns the length of a string.
- * @s: String to be evaluated.
- *
- * Return: Length of the input string.
- */
-unsigned int _strlen(char *s)
-{
-    unsigned int length = 0;
-
-    while (s[length] != '\0')
-        length++;
-
-    return (length);
-} 
 
