@@ -1,16 +1,9 @@
-global main
-
-section .data
-    hello: db 'Hello, Holberton', 10, 0 ; string to print
-
-section .text
+	global   main
+	  extern    printf
 main:
-    ; call printf with hello string
-    mov     rdi, hello      ; first argument (format string)
-    mov     eax, 0          ; set return value to 0
-    call    printf          ; call printf function
-
-    ; exit program
-    mov     eax, 0          ; set return value to 0
-    ret                     ; return from main
-
+	  mov   edi, format
+	  xor   eax, eax
+	  call  printf
+	  mov   eax, 0
+	  ret
+format: db `Hello, Holberton\n`,0
