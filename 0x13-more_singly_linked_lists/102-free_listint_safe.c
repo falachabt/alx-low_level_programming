@@ -10,31 +10,32 @@
 size_t free_listint_safe(listint_t **h)
 {
     size_t count = 0;
-    listint_t *current, *next;
+    int diff;
+    listint_t *temp;
 
     if (!h || !(*h))
         return (count);
 
-    current = *h;
-    while (current)
+    while (*h)
     {
-        next = current->next;
-        free(current);
-        count++;
-
-        /* Check if the next node has already been freed. */
-        if (next && (next < current))
-        {
-            /* Set the next pointer of the previous node to NULL. */
-            current->next = NULL;
-            *h = NULL;
-            exit(98);
-        }
-
-        current = next;
+	    diff = *h - (*h)->next;
+	    if (dif > 0)
+	    {
+		    temp = (*h)->next;
+		    free(*h);
+		    *h = temp;
+		    count++;
+	    }
+	    else
+	    {
+		    free(*h);
+		    *h = NULL;
+		    count++;
+		    break;
+	    }
     }
 
-    *h = NULL;
+    *h  = NULL;
     return (count);
 }
 
