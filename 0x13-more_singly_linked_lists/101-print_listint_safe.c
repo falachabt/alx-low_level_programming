@@ -1,60 +1,50 @@
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include "lists.h"
 
 /**
- * print_listint_safe - Prints a listint_t linked list, handling loops
- * @head: Pointer to the head of the list
+ * print_listint_safe - prints a linked list, even if it contains a loop
+ * @head: a pointer to the head of the list
  *
- * Return: The number of nodes in the list
+ * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-    const listint_t *slow, *fast;
-    size_t count = 0;
+	const listint_t *current, *runner;
+	size_t count;
 
-    if (!head)
-        exit(98);
+	if (head == NULL)
+		exit(98);
 
-    slow = head;
-    fast = head;
+	current = head;
+	count = 0;
 
-    while (fast && fast->next)
-    {
-        printf("[%p] %d\n", (void *)slow, slow->n);
-        count++;
-        slow = slow->next;
-        fast = fast->next->next;
+	while (current != NULL)
+	{
+		printf("[%p] %d\n", (void *)current, current->n);
+		count++;
 
-        if (slow == fast)
-        {
-            printf("[%p] %d\n", (void *)slow, slow->n);
-            count++;
+		if (current > current->next)
+		{
+			printf("-> [%p] %d\n", (void *)current->next,
+			       current->next->n);
+			break;
+		}
 
-            /* Break the loop by moving the slow pointer back to the head */
-            slow = head;
+		runner = current->next;
+		while (runner != NULL)
+		{
+			if (runner == current)
+			{
+				printf("-> [%p] %d\n", (void *)runner, runner->n);
+				exit(98);
+			}
+			runner = runner->next;
+		}
 
-            while (slow != fast)
-            {
-                printf("[%p] %d\n", (void *)slow, slow->n);
-                count++;
-                slow = slow->next;
-                fast = fast->next;
-            }
+		current = current->next;
+	}
 
-            printf("-> [%p] %d\n", (void *)slow, slow->n);
-            return (count);
-        }
-    }
-
-    /* Print the remaining nodes */
-    while (slow)
-    {
-        printf("[%p] %d\n", (void *)slow, slow->n);
-        count++;
-        slow = slow->next;
-    }
-
-    return (count);
+	return (count);
 }
 
