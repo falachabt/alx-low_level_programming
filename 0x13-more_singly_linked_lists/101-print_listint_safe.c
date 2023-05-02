@@ -3,48 +3,39 @@
 #include "lists.h"
 
 /**
- * print_listint_safe - prints a linked list, even if it contains a loop
- * @head: a pointer to the head of the list
- *
+ * print_listint_safe - prints a listint_t linked list
+ * @head: pointer to the head of the list
  * Return: the number of nodes in the list
  */
 size_t print_listint_safe(const listint_t *head)
 {
-	const listint_t *current, *runner;
-	size_t count;
+    size_t count = 0;
+    const listint_t *slow, *fast;
 
-	if (head == NULL)
-		exit(98);
+    if (head == NULL)
+        exit(98);
 
-	current = head;
-	count = 0;
+    slow = head;
+    fast = head->next;
 
-	while (current != NULL)
-	{
-		printf("[%p] %d\n", (void *)current, current->n);
-		count++;
+    while (slow != NULL)
+    {
+        printf("[%p] %d\n", (void *)slow, slow->n);
+        count++;
 
-		if (current > current->next)
-		{
-			printf("-> [%p] %d\n", (void *)current->next,
-			       current->next->n);
-			break;
-		}
+        if (slow == fast) /* loop detected */
+        {
+            printf("-> [%p] %d\n", (void *)fast, fast->n);
+            break;
+        }
 
-		runner = current->next;
-		while (runner != NULL)
-		{
-			if (runner == current)
-			{
-				printf("-> [%p] %d\n", (void *)runner, runner->n);
-				exit(98);
-			}
-			runner = runner->next;
-		}
+        slow = slow->next;
 
-		current = current->next;
-	}
+        if (fast != NULL && fast->next != NULL)
+            fast = fast->next->next;
+        else
+            fast = NULL;
+    }
 
-	return (count);
+    return (count);
 }
-
