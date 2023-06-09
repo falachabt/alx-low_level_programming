@@ -2,9 +2,9 @@
 #include <stdlib.h>
 
 /**
- * main - prints the mke change for an amount of money
- * @argc: the number of command line arguments
- * @argv: the array of command line arguments
+ * main - prints the mke chan amount of money
+ * @argc: the number ofmand line arguments
+ * @argv: the arracommand line arguments
  *
  * Return: 0 on success, 1 on error
  */
